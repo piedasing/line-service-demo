@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LINE Login Demo</title>
+</head>
+<body>
+    <button id="lineLoginBtn">LINE 登入</button>
+
+    <script>
+        document.querySelector('#lineLoginBtn').addEventListener('click', function(e) {
+            let client_id = '1653311283';
+            let redirect_uri = '';
+            let link = 'https://access.line.me/oauth2/v2.1/authorize?';
+            link += 'response_type=code';
+            link += '&client_id=' + client_id;
+            link += '&redirect_uri=' + redirect_uri;
+            link += '&state=login';
+            link += '&scope=openid%20profile';
+            window.location.href = link;
+        });
+    </script>
+</body>
+</html>
